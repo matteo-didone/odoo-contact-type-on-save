@@ -1,0 +1,27 @@
+<section class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>Contact Type on Save</h2>
+            <p class="lead">In Odoo 18, a new contact set as <b>Company</b> can be checked as if it were an <b>Individual</b>. This module makes the checks see the type you chose.</p>
+        </div>
+    </div>
+</section>
+<section class="container">
+    <div class="row">
+        <div class="col-12">
+            <h3>The problem</h3>
+            <p>The contact form sends the company type, and Odoo turns it into the company flag only after the contact has been created. Checks that run before that still see an individual, and may refuse a perfectly valid company.</p>
+            <p>An example is the OCA Italian localization: a company whose fiscal code equals its VAT number is refused because the fiscal code "must have 16 characters", which is the rule for individuals. It happens when the contact is created from places that do not already assume a company, such as a quotation.</p>
+            <h3>What this module does</h3>
+            <p>When a contact is created or changed with a company type, the company flag is set together with it, so every check sees the right type. Individuals are still checked as individuals. A company flag given explicitly, as imports do, is left as it is.</p>
+            <h3>Good to know</h3>
+            <ul>
+                <li>No settings, no new fields, no new views: install it and it works.</li>
+                <li>Installing it does not change your existing contacts.</li>
+                <li>An individual created where Odoo assumes a company, such as in Invoicing, is now checked as an individual too. Checks may be stricter there.</li>
+                <li>The same correction has been proposed to Odoo. Once Odoo includes it, you can uninstall this module.</li>
+                <li>Free, with no data sent anywhere.</li>
+            </ul>
+        </div>
+    </div>
+</section>
